@@ -1,6 +1,11 @@
 # nuxt-dockerize-example
 A minimal NuxtJS docker image example application
 
+## Nuxt Bridge
+Nuxt Bridge (https://v3.nuxtjs.org/bridge/overview/) is implemented and all commands are using `nuxi` as part of the pending migration from NuxtJS v2 to NuxtJS v3!
+
+See the `package.json` for more details about which `nuxi` commands are available out-of-the-box.
+
 ## Available pages
 Currently there are 2 pages available:
 1. `/` - The home page, a page with static data
@@ -30,4 +35,4 @@ If you're using the Docker containers, check whether SSR or SSG is used as previ
 
 ### SSG
 1. Build the SSR docker image by running `docker build -f .\Dockerfile.ssg . -t nuxt-dockerize-example-ssg`
-2. Run the SSR docker image by running `docker run -d -p 3000:3000 nuxt-dockerize-example-ssg`
+2. Run the SSR docker image by running `docker run -d -p 3001:3000 nuxt-dockerize-example-ssg`

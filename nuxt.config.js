@@ -1,4 +1,6 @@
-export default {
+import { defineNuxtConfig } from '@nuxt/bridge'
+
+export default defineNuxtConfig({
   // Uncomment this for SSG, otherwise SSR is used
   // target: 'static',
   // ssr: false,
@@ -34,7 +36,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
+    // '@nuxt/typescript-build',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -44,4 +46,4 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
-}
+})
