@@ -1,6 +1,11 @@
 # nuxt-dockerize-example
 A minimal NuxtJS docker image example application
 
+## Available pages
+Currently there are 2 pages available:
+1. `/` - The home page, a page with static data
+2. `/ssr` - A page that dynamically renders data from an external API
+
 ## How to run
 Navigate to the `nuxt.config.js` file and verify whether SSR or SSG is used.
 
