@@ -1,7 +1,7 @@
 export default {
   // Uncomment this for SSG, otherwise SSR is used
-  // target: 'static',
-  // ssr: false,
+  target: 'static',
+  ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
