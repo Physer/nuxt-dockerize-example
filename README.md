@@ -32,7 +32,7 @@ If you're using the Docker containers, check whether SSR or SSG is used as previ
 ### Docker Compose
 
 The easiest way to get these applications (both SSG and SSR examples) up and running is by using Docker Compose.
-Simply run the command `docker-compose up -d` in the root of this repository.
+Simply run the command `docker-compose up -d` in the root of this repository. If you want to rebuild the images you can run the following Docker Compose command: `docker-compose up -d --build`.
 
 This will result in two applications running:
 1. The SSR application now runs on http://localhost:3000/
