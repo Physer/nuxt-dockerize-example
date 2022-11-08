@@ -1,0 +1,17 @@
+services:
+  nuxt-dockerize-example-ssr:
+    build:
+      context: .
+      dockerfile: Dockerfile.ssr
+    container_name: nuxt-dockerize-example-ssr
+    ports:
+      - 3000:3000
+    restart: always
+  nuxt-dockerize-example-ssg:
+    build:
+      context: .
+      dockerfile: Dockerfile.ssg
+    container_name: nuxt-dockerize-example-ssg
+    ports:
+      - 3001:3000
+    restart: always

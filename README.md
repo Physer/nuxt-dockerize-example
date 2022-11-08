@@ -29,10 +29,20 @@ If you're using SSG (when the `target` is set to `static` and the `ssr` boolean 
 ## Docker
 If you're using the Docker containers, check whether SSR or SSG is used as previously mentioned in this `README.md`.
 
-### SSR
+### Docker Compose
+
+The easiest way to get these applications (both SSG and SSR examples) up and running is by using Docker Compose.
+Simply run the command `docker-compose up -d` in the root of this repository.
+
+This will result in two applications running:
+1. The SSR application now runs on http://localhost:3000/
+2. The SSG application now runs on http://localhost:3001/
+
+### Manually building the images
+#### SSR
 1. Build the SSR docker image by running `docker build -f .\Dockerfile.ssr . -t nuxt-dockerize-example-ssr`
 2. Run the SSR docker image by running `docker run -d -p 3000:3000 nuxt-dockerize-example-ssr`
 
-### SSG
+#### SSG
 1. Build the SSR docker image by running `docker build -f .\Dockerfile.ssg . -t nuxt-dockerize-example-ssg`
 2. Run the SSR docker image by running `docker run -d -p 3001:3000 nuxt-dockerize-example-ssg`
