@@ -13,6 +13,7 @@ export default {
         }
     },
     async fetch() {
+        console.log('This log line shows up on the server when doing SSR and on the client when doing SSG!');
         this.text = await fetch('https://baconipsum.com/api/?type=all-meat&paras=2&start-with-lorem=1').then(res => res.json());
     }
 }
