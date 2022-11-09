@@ -7,21 +7,23 @@ Nuxt Bridge (https://v3.nuxtjs.org/bridge/overview/) is implemented and all comm
 See the `package.json` for more details about which `nuxi` commands are available out-of-the-box.
 
 ## Available pages
-Currently there are 2 pages available:
+Currently there are 3 pages available:
 1. `/` - The home page, a page with static data
 2. `/ssr` - A page that dynamically renders data from an external API
+3. `/env` - A page that retrieves both a public and a private environment variable and prints them (depending on SSR/SSG)
 
 ## How to run
-Navigate to the `nuxt.config.js` file and verify whether SSR or SSG is used.
+Copy the `.env.example` file and rename it to `.env`.
+If you wish to run the configuration in SSG rather than in SSR, change the value of the `SSR` environment variable to `false`.
 
 ### SSR
-If you're using SSR (the default mode, when the target and ssr values are commented out or explicitly set to SSR), run the following commands:
+If you're using SSR, run the following commands:
 1. `npm i`
-2. `npm run build` or `npm run build:standalone`
+2. `npm run build`
 3. `npm run start`
 
 ### SSG
-If you're using SSG (when the `target` is set to `static` and the `ssr` boolean is set to `true`), run the following commands:
+If you're using SSG, run the following commands:
 1. `npm i`
 2. `npm run generate`
 3. `npm run start`
