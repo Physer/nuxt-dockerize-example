@@ -5,6 +5,11 @@ A minimal NuxtJS docker image example application
 A preliminary version using Nuxt Bridge (https://v3.nuxtjs.org/bridge/overview/) is available in the `nuxt-bridge` directory.
 Note that is not fully functional and still work-in-progress, which may result in undesired behaviour.
 
+## Custom modules and server middleware
+This application sports two different modules.
+1. The `customModule`. This module adds a badge to the Nuxt start-up process saying the module is initialized. This is a `buildModule`.
+2. The `middlewareModule`. This module logs every URL request it intercepts. This is a `module` and pushes `serverMiddleware`.
+
 ## Available pages
 Currently there are 3 pages available:
 1. `/` - The home page, a page with static data
