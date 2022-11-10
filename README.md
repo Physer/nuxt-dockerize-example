@@ -6,9 +6,11 @@ A preliminary version using Nuxt Bridge (https://v3.nuxtjs.org/bridge/overview/)
 Note that is not fully functional and still work-in-progress, which may result in undesired behaviour.
 
 ## Custom modules and server middleware
-This application sports two different modules.
+This application sports four different modules.
 1. The `customModule`. This module adds a badge to the Nuxt start-up process saying the module is initialized. This is a `buildModule`.
 2. The `middlewareModule`. This module logs every URL request it intercepts. This is a `module` and pushes `serverMiddleware`.
+2. The `loremModule`. This module generates random lorem ipsum upon start-up using an external package: [lorem-ipsum](https://www.npmjs.com/package/lorem-ipsum). This is a `buildModule`.
+2. The `uuidModule`. This module logs generates a random UUID on start-up using an external package: [uuid](https://www.npmjs.com/package/uuid). This is a `module`.
 
 ## Available pages
 Currently there are 4 pages available:

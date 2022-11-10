@@ -14,7 +14,7 @@ COPY . .
 
 # Build the NuxtJS application, including devDependencies and create a standalone production build
 RUN npm ci && \
-npx nuxt build --standalone
+npx nuxt build --standalone --modern=server
 
 # The runner stage
 # This is the final image that will be used when running the Docker container

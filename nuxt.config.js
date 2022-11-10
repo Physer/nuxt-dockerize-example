@@ -34,13 +34,12 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
-    '~/modules/customModule'
+    "~/modules/customModule",
+    "~/modules/loremModule",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '~/modules/middlewareModule'
-  ],
+  modules: ["~/modules/middlewareModule", "~/modules/uuidModule"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
