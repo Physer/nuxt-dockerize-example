@@ -11,7 +11,7 @@ This application sports two different modules.
 2. The `middlewareModule`. This module logs every URL request it intercepts. This is a `module` and pushes `serverMiddleware`.
 
 ## Available pages
-Currently there are 3 pages available:
+Currently there are 4 pages available:
 1. `/` - The home page, a page with static data
 2. `/ssr` - A page that dynamically renders data from an external API
 3. `/env` - A page that retrieves both a public and a private environment variable and prints them on-screen
