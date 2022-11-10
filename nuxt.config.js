@@ -1,10 +1,6 @@
 import { defineNuxtConfig } from "@nuxt/bridge";
 
 export default defineNuxtConfig({
-  // Uncomment this for SSG, otherwise SSR is used
-  target: process.env.SSR !== "true" ? "static" : "server",
-  ssr: process.env.SSR !== "true" ? false : true,
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "example",

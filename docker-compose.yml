@@ -1,5 +1,8 @@
 services:
   nuxt-dockerize-example-ssr:
+    environment:
+      - APPLICATION_NAME=nuxt-dockerize-example-ssr
+      - SECRET=c6b20183-be1e-4020-9c0a-85bef1cc5b8a
     build:
       context: .
       dockerfile: Dockerfile.ssr
