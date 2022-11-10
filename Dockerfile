@@ -12,9 +12,13 @@ WORKDIR /app
 # Copy all the files (excluding those defined in the .dockerignore file)
 COPY . .
 
-# Build the NuxtJS application, including devDependencies and create a standalone production build
+# Build the NuxtJS application, including devDependencies and create a production build
 RUN npm ci && \
-npx nuxt build --standalone --modern=server
+npx nuxt build
+
+# Build the NuxtJS application in production mode
+RUN rm -rf node_modules && \
+npm i --ignore-scripts --omit=dev
 
 # The runner stage
 # This is the final image that will be used when running the Docker container
@@ -30,6 +34,9 @@ ENV NODE_ENV=PRODUCTION
 
 # Create a separate folder for the application to live in
 WORKDIR /app
+
+# Copy the NPM modules
+COPY --from=builder /app/node_modules ./node_modules
 
 # Copy the custom runtime files from the builder
 COPY --from=builder /app/modules ./modules
