@@ -14,7 +14,7 @@ COPY . .
 
 # Build the NuxtJS application, including devDependencies and create a production build
 RUN npm ci && \
-npx nuxt build
+npx nuxi build
 
 # Build the NuxtJS application in production mode
 RUN rm -rf node_modules && \
@@ -40,14 +40,14 @@ COPY --from=builder /app/node_modules ./node_modules
 
 # Copy the custom runtime files from the builder
 COPY --from=builder /app/modules ./modules
-COPY --from=builder /app/middleware ./middleware
 
 # Copy the NuxtJS configuration for start-up and runtime configuration settings from the builder
-COPY --from=builder /app/nuxt.config.js ./nuxt.config.js
+COPY --from=builder /app/nuxt.config.ts ./nuxt.config.ts
 
 # Copy the entire NuxtJS application from the builder
 COPY --from=builder /app/.nuxt ./.nuxt
 COPY --from=builder /app/static ./static
+COPY --from=builder /app/.output ./.output
 
 # Expose port 3000 for the docker containers
 EXPOSE 3000
@@ -57,4 +57,4 @@ ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
 
 # The NuxtJS start-up command when the container is launched to serve the built application
-CMD [ "npx", "nuxt-start" ]
+CMD [ "npx", "nuxi", "preview" ]

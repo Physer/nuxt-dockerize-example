@@ -3,3 +3,4 @@
 **/.nuxt
 **/.output
 **/dist
+**/*.env
