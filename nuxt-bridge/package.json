@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi build",
-    "start": "nuxi preview",
-    "generate": "nuxi generate"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "core-js": "^3.25.3",
+    "lorem-ipsum": "^2.0.8",
     "nuxt-edge": "^2.16.0-27720022.54e852f",
     "uuid": "^9.0.0",
     "vue": "^2.7.10",

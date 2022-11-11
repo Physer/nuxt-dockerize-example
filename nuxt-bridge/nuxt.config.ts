@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from "@nuxt/bridge";
 
 export default defineNuxtConfig({
+  bridge: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "example",
@@ -34,12 +35,12 @@ export default defineNuxtConfig({
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    // '@nuxt/typescript-build',
+    "~/modules/customModule",
+    "~/modules/loremModule",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["~/modules/middlewareModule", "~/modules/uuidModule"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
