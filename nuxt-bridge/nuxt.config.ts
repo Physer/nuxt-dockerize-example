@@ -1,4 +1,9 @@
-export default {
+import { defineNuxtConfig } from "@nuxt/bridge";
+
+export default defineNuxtConfig({
+  bridge: {
+    nitro: false
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "example",
@@ -14,11 +19,11 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
-  privateRuntimeConfig: {
+  runtimeConfig: {
     secret: process.env.SECRET,
-  },
-  publicRuntimeConfig: {
-    applicationName: process.env.APPLICATION_NAME,
+    public: {
+      applicationName: process.env.APPLICATION_NAME,
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -32,8 +37,6 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    "@nuxt/typescript-build",
     "~/modules/customModule",
     "~/modules/loremModule",
   ],
@@ -43,4 +46,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-};
+});
