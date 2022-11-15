@@ -4,6 +4,12 @@ A minimal NuxtJS docker image example application
 ## Nuxt Bridge
 This branch showcases an example where Nuxt Bridge has been incorrectly configured because it's been mixed with the regular NuxtJS v2 build configuration.
 
+There are two other branches available in this repository.
+
+* The branch: `nuxt-bridge` contains a working version of Nuxt Bridge. This includes a Docker container.
+* The branch: `nuxt-bridge-broken` contains a showcase of what happens when you mix Nuxt Bridge with the regular NuxtJS v2 build system. This will result in a working development environment but a broken production environment.
+
+
 ## Custom modules and server middleware
 This application sports four different modules.
 1. The `customModule`. This module adds a badge to the Nuxt start-up process saying the module is initialized. This is a `buildModule`.
