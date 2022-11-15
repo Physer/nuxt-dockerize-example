@@ -17,9 +17,9 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    secret: process.env.SECRET,
+    secret: process.env.SECRET || 'default-secret',
     public: {
-      applicationName: process.env.APPLICATION_NAME,
+      applicationName: process.env.APPLICATION_NAME || 'default-application-name',
     },
   },
 
