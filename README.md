@@ -2,8 +2,7 @@
 A minimal NuxtJS docker image example application
 
 ## Nuxt Bridge
-A preliminary version using Nuxt Bridge (https://v3.nuxtjs.org/bridge/overview/) is available in the `nuxt-bridge` directory.
-Note that is not fully functional and still work-in-progress, which may result in undesired behaviour.
+This branch showcases an example where Nuxt Bridge has been incorrectly configured because it's been mixed with the regular NuxtJS v2 build configuration.
 
 ## Custom modules and server middleware
 This application sports four different modules.

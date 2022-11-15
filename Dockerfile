@@ -2,7 +2,7 @@
 # This stage is responsible for:
 # 1. Installing the necessary dependencies
 # 2. Building the NuxtJS application
-# 3. Bundling the necessary external packages into a standalone build
+# 3. Bundling the necessary external packages into a build
 FROM node:16-alpine as builder
 # Use Docker Buildkit for faster build times (https://docs.docker.com/build/buildkit/)
 ENV DOCKER_BUILDKIT=1
@@ -40,10 +40,9 @@ COPY --from=builder /app/node_modules ./node_modules
 
 # Copy the custom runtime files from the builder
 COPY --from=builder /app/modules ./modules
-COPY --from=builder /app/middleware ./middleware
 
 # Copy the NuxtJS configuration for start-up and runtime configuration settings from the builder
-COPY --from=builder /app/nuxt.config.js ./nuxt.config.js
+COPY --from=builder /app/nuxt.config.ts ./nuxt.config.ts
 
 # Copy the entire NuxtJS application from the builder
 COPY --from=builder /app/.nuxt ./.nuxt
