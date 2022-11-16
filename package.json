@@ -2,15 +2,22 @@
   "name": "example",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "libs/lipsum-generator"
+  ],
   "scripts": {
+    "_clean": "shx rm -rf ./.nuxt",
+    "preinstall": "npm run build-lib",
     "dev": "nuxt",
     "build": "nuxt build",
-    "build:standalone": "nuxt build --standalone",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "build-lib": "npm run _tsup --workspace libs/lipsum-generator",
+    "clean": "npm run _clean && npm run _clean --workspaces"
   },
   "dependencies": {
+    "@physer/lipsum-generator": "*",
     "core-js": "^3.25.3",
     "lorem-ipsum": "^2.0.8",
     "nuxt": "^2.15.8",
@@ -23,6 +30,7 @@
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "jest": "^29.3.1",
+    "shx": "^0.3.4",
     "std-env": "^3.3.0"
   }
 }
