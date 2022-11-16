@@ -1,7 +1,6 @@
-// import { LoremIpsum } from "lorem-ipsum";
+import { LoremIpsum } from "lorem-ipsum";
 
 export default function generateLoremIpsum() {
-  // const lorem = new LoremIpsum();
-  // return lorem.generateSentences();
-  return "Hello there";
+  const lorem = new LoremIpsum();
+  return lorem.generateSentences();
 }
