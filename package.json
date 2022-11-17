@@ -17,7 +17,7 @@
     "clean": "npm run _clean && npm run _clean --workspaces"
   },
   "dependencies": {
-    "@physer/lipsum-generator": "*",
+    "@physer/lipsum-generator": "file:../libs/lipsum-generator",
     "core-js": "^3.25.3",
     "lorem-ipsum": "^2.0.8",
     "nuxt": "^2.15.8",
