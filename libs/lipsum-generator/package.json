@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "main": "dist/app.js",
+  "types": "dist/app.d.ts",
   "files": [
     "dist/**"
   ],
   "scripts": {
     "_clean": "shx rm -rf ./dist",
-    "_tsup": "tsup app.ts"
+    "_tsup": "tsup app.ts --dts"
   },
   "devDependencies": {
     "tsup": "^6.5.0",
