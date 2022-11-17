@@ -35,6 +35,10 @@ ENV NODE_ENV=PRODUCTION
 # Create a separate folder for the application to live in
 WORKDIR /app
 
+# Copy libs and prune the source
+COPY --from=builder /app/libs ./libs
+RUN find libs -mindepth 2 -maxdepth 2 -name dist -o -name package.json -prune -o -exec rm -rf {} +
+
 # Copy the NPM modules
 COPY --from=builder /app/node_modules ./node_modules
 
