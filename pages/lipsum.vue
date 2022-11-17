@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import generateLoremIpsum from '@physer/lipsum-generator'
+import { generateLoremIpsum } from '@physer/lipsum-generator'
 
 export default {
     data() {

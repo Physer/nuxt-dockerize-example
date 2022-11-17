@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "_clean": "shx rm -rf ./dist",
-    "_tsup": "tsup app.ts --format cjs"
+    "_tsup": "tsup app.ts"
   },
   "devDependencies": {
     "tsup": "^6.5.0",
