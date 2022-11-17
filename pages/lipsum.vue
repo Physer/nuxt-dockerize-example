@@ -2,16 +2,18 @@
     <div>
         <h2>This page generates a piece of lorem ipsum through a private module:</h2>
         <p>{{ lipsum }}</p>
+        <p>{{ staticLipsum }}</p>
     </div>
 </template>
 
 <script>
-import { generateLoremIpsum } from '@physer/lipsum-generator'
+import { generateLoremIpsum, getStaticLipsum } from '@physer/lipsum-generator'
 
 export default {
     data() {
         return {
-            lipsum: ''
+            lipsum: '',
+            staticLipsum: getStaticLipsum()
         }
     },
     fetch() {
