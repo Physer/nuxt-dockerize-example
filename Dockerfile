@@ -20,6 +20,9 @@ npx nuxi build
 RUN rm -rf node_modules && \
 npm i --ignore-scripts --omit=dev
 
+# Prune the libraries
+RUN find libs -mindepth 2 -maxdepth 2 -name dist -o -name package.json -prune -o -exec rm -rf {} +
+
 # The runner stage
 # This is the final image that will be used when running the Docker container
 # It's responsible for:
@@ -34,6 +37,9 @@ ENV NODE_ENV=PRODUCTION
 
 # Create a separate folder for the application to live in
 WORKDIR /app
+
+# Copy libs and prune the source
+COPY --from=builder /app/libs ./libs
 
 # Copy the NPM modules
 COPY --from=builder /app/node_modules ./node_modules
