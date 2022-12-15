@@ -8,9 +8,9 @@
   "scripts": {
     "_clean": "shx rm -rf ./.nuxt",
     "preinstall": "npm run build-lib",
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "nuxi preview",
     "generate": "nuxt generate",
     "test": "jest --passWithNoTests",
     "build-lib": "npm run _tsup --workspace libs/lipsum-generator",
@@ -18,19 +18,13 @@
   },
   "dependencies": {
     "@physer/lipsum-generator": "file:../libs/lipsum-generator",
-    "core-js": "^3.25.3",
     "lorem-ipsum": "^2.0.8",
-    "nuxt": "^2.15.8",
-    "uuid": "^9.0.0",
-    "vue": "^2.7.10",
-    "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "nuxt": "^3.0.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
-    "@nuxt/typescript-build": "^2.1.0",
     "jest": "^29.3.1",
-    "shx": "^0.3.4",
-    "std-env": "^3.3.0"
+    "shx": "^0.3.4"
   }
 }
