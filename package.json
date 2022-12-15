@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
+    "@types/uuid": "^9.0.0",
     "jest": "^29.3.1",
     "shx": "^0.3.4"
   }
