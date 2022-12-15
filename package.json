@@ -17,6 +17,7 @@
     "clean": "npm run _clean && npm run _clean --workspaces"
   },
   "dependencies": {
+    "@nuxt/kit": "^3.0.0",
     "@physer/lipsum-generator": "file:../libs/lipsum-generator",
     "lorem-ipsum": "^2.0.8",
     "nuxt": "^3.0.0",

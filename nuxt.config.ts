@@ -25,5 +25,10 @@ export default defineNuxtConfig({
   },
   typescript: {
     typeCheck: true
-  }
+  },
+  modules: [
+    './modules/customModule',
+    './modules/loremModule',
+    './modules/uuidModule',
+  ]
 });
