@@ -3,7 +3,7 @@
 # 1. Installing the necessary dependencies
 # 2. Building the NuxtJS application
 # 3. Bundling the necessary external packages into a standalone build
-FROM node:16-alpine as builder
+FROM node:lts-alpine as builder
 # Use Docker Buildkit for faster build times (https://docs.docker.com/build/buildkit/)
 ENV DOCKER_BUILDKIT=1
 
@@ -14,7 +14,7 @@ COPY . .
 
 # Build the NuxtJS application, including devDependencies and create a production build
 RUN npm ci && \
-npx nuxt build
+npx nuxi build
 
 # Build the NuxtJS application in production mode
 RUN rm -rf node_modules && \
@@ -28,10 +28,10 @@ RUN find libs -mindepth 2 -maxdepth 2 -name dist -o -name package.json -prune -o
 # It's responsible for:
 # 1. Copying the necessary custom runtime files to the container
 # 2. Copying the NuxtJS configuration
-# 3. Copying the entire NuxtJS application (the .nuxt and the static folders)
+# 3. Copying the entire NuxtJS application (the .nuxt, .output and static folders)
 # 4. Setting container variables
 # 5. Defining the start-up command
-FROM node:16-alpine as runner
+FROM node:lts-alpine as runner
 # Since this is the final image, we want to build in production mode
 ENV NODE_ENV=PRODUCTION
 
@@ -49,10 +49,11 @@ COPY --from=builder /app/modules ./modules
 COPY --from=builder /app/middleware ./middleware
 
 # Copy the NuxtJS configuration for start-up and runtime configuration settings from the builder
-COPY --from=builder /app/nuxt.config.js ./nuxt.config.js
+COPY --from=builder /app/nuxt.config.ts ./nuxt.config.ts
 
 # Copy the entire NuxtJS application from the builder
 COPY --from=builder /app/.nuxt ./.nuxt
+COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/static ./static
 
 # Expose port 3000 for the docker containers
@@ -62,5 +63,5 @@ EXPOSE 3000
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
 
-# The NuxtJS start-up command when the container is launched to serve the built application
-CMD [ "npx", "nuxt-start" ]
+# Start the NuxtJS application through a Node CLI command to launch and serve the built application
+CMD [ "node", "./.output/server/index.mjs" ]

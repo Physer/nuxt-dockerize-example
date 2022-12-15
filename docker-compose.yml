@@ -1,8 +1,8 @@
 services:
   nuxt-dockerize-example:
     environment:
-      - APPLICATION_NAME=nuxt-dockerize-example-docker-container
-      - SECRET=c6b20183-be1e-4020-9c0a-85bef1cc5b8a
+      - NUXT_PUBLIC_APPLICATION_NAME=nuxt-dockerize-example-docker-container
+      - NUXT_SECRET=c6b20183-be1e-4020-9c0a-85bef1cc5b8a
     build:
       context: .
     container_name: nuxt-dockerize-example
