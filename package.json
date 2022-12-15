@@ -6,7 +6,7 @@
     "libs/lipsum-generator"
   ],
   "scripts": {
-    "_clean": "shx rm -rf ./.nuxt",
+    "_clean": "shx rm -rf ./.nuxt ./.output ./dist",
     "preinstall": "npm run build-lib",
     "dev": "nuxi dev",
     "build": "nuxi build",
@@ -23,9 +23,10 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.8",
     "@types/uuid": "^9.0.0",
     "jest": "^29.3.1",
-    "shx": "^0.3.4"
+    "shx": "^0.3.4",
+    "typescript": "^4.9.4",
+    "vue-tsc": "^1.0.13"
   }
 }
