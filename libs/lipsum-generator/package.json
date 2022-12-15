@@ -2,14 +2,14 @@
   "name": "@physer/lipsum-generator",
   "version": "1.0.0",
   "private": true,
-  "main": "dist/app.js",
+  "main": "dist/app.mjs",
   "types": "dist/app.d.ts",
   "files": [
     "dist/**"
   ],
   "scripts": {
     "_clean": "shx rm -rf ./dist",
-    "_tsup": "tsup app.ts --dts"
+    "_tsup": "tsup app.ts --format esm --dts"
   },
   "devDependencies": {
     "tsup": "^6.5.0",
