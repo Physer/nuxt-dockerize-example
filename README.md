@@ -1,26 +1,21 @@
 # nuxt-dockerize-example
 A minimal NuxtJS docker image example application
 
-## Nuxt Bridge
-Nuxt Bridge is a forward-compatability layer for using NuxtJS v3 features such as Nitro on NuxtJS v2.
-For more information see: https://v3.nuxtjs.org/bridge/overview/
-
-There are two other branches available in this repository.
-
-* The branch: `nuxt-bridge` contains a working version of Nuxt Bridge. This includes a Docker container.
-* The branch: `nuxt-bridge-broken` contains a showcase of what happens when you mix Nuxt Bridge with the regular NuxtJS v2 build system. This will result in a working development environment but a broken production environment.
+## Nuxt v3
+This branch is using NuxtJS version 3.
+For version 2 or `nuxt-bridge`, please see the `main` and `nuxt-bridge` branch respectively.
 
 ## Internal libraries
 This applications also contains a locally built NPM module. The library is written in Typescript and transpiled to Javascript.
-This module is installed as a symlink and is bundled as a `.js` file using `tsup`.
+This module is installed as a symlink and is bundled as a `.mjs` file (ESM) using `tsup`.
 Libraries are included in the `libs` folder.
 
 ## Custom modules and server middleware
 This application sports four different modules.
-1. The `customModule`. This module adds a badge to the Nuxt start-up process saying the module is initialized. This is a `buildModule`.
-2. The `middlewareModule`. This module logs every URL request it intercepts. This is a `module` and pushes `serverMiddleware`.
-2. The `loremModule`. This module generates random lorem ipsum upon start-up using an external package: [lorem-ipsum](https://www.npmjs.com/package/lorem-ipsum). This is a `buildModule`.
-2. The `uuidModule`. This module logs generates a random UUID on start-up using an external package: [uuid](https://www.npmjs.com/package/uuid). This is a `module`.
+1. The `customModule`. This module adds a log line to the Nuxt start-up process saying the module is initialized.
+2. The `middlewareModule`. This module logs every URL request it intercepts.
+2. The `loremModule`. This module generates random lorem ipsum upon start-up using an external package: [lorem-ipsum](https://www.npmjs.com/package/lorem-ipsum).
+2. The `uuidModule`. This module logs generates a random UUID on start-up using an external package: [uuid](https://www.npmjs.com/package/uuid).
 
 ## Available pages
 Currently there are 4 pages available:
