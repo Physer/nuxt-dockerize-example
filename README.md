@@ -1,6 +1,10 @@
 # nuxt-dockerize-example
 A minimal NuxtJS docker image example application
 
+## Nuxt versions
+The `main` branch is currently using NuxtJS version 2.
+If you would like to view this application in version 3 of NuxtJS, please switch to the `nuxt-v3` branch.
+
 ## Nuxt Bridge
 Nuxt Bridge is a forward-compatability layer for using NuxtJS v3 features such as Nitro on NuxtJS v2.
 For more information see: https://v3.nuxtjs.org/bridge/overview/
